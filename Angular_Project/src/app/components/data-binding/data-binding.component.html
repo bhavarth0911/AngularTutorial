@@ -1,0 +1,58 @@
+<p>data-binding works!</p>
+<div class="row">
+  <div class="col-4">
+    one way from .ts to .html
+  </div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <div class="row">
+      <div class="col-4">
+      Interpolation
+        <h1>{{courseName}}</h1>
+        <h1>{{inputType}}</h1>
+        <input type="text" value={{courseName}} placeholder="enter text">
+        <input type={{inputType}} >
+      </div>
+    <div class="col-4">
+    ====================
+    property binding
+    <div [class]="myClassName">hii</div>
+    <input type="text" [value]="courseName"/>
+    <input [type]="inputType">
+
+    </div>
+
+    </div>
+  </div>
+  <div class="col-4">
+    <button class="btn btn-success" (click)="showAlert('welcome to angular 18')">show Welcome</button>
+    <span (click)="changeCourseName()">click me</span>
+  </div>
+  <div class="col-4"></div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+      <input type="text" [(ngModel)]="courseName" placeholder="change value"/> -- {{courseName}}
+
+      <input type="checkbox" [(ngModel)]="isIndian"/>
+
+      <select [(ngModel)]="stateName">
+        <option value="">select</option>
+        <option value="maharashtra">maharashtra</option>
+        <option value="goa">goa</option>
+        <option value="punjab">punjab</option>
+      </select>
+
+  </div>
+  <div class="col-6">
+  
+  <h2>{{firstName()}}</h2> <!--whenever we are calling signal call it using name and () paranthesis like a method-->
+  
+  </div>
+  <div class="col-4"></div>
+</div>
