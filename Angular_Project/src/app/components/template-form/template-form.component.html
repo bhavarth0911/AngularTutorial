@@ -1,0 +1,122 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+  <h1>template form</h1>
+  <p>using ngmodel</p>
+</div>
+
+<div>
+  <form #form="ngForm">
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault01">First name</label>
+        <input
+          type="text"
+          name="name"
+          #fname="ngModel"
+          [(ngModel)]="studenObj.name"
+          class="form-control"
+          placeholder="First name"
+          required
+          minlength="6"
+        />
+        <div class="text-danger">
+          @if((fname.touched ||fname.dirty) && fname.errors?.['required']) {
+          <span>This is required</span>
+          } @else if(fname.errors?.['minlength']) {
+          <span>min 6 char required</span>
+          }
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault02">Last name</label>
+        <input
+          type="text"
+          name="lastName"
+          [(ngModel)]="studenObj.lastName"
+          class="form-control"
+          id="validationDefault02"
+          placeholder="Last name"
+          required
+        />
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefaultUsername">Username</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend2">&:64</span>
+          </div>
+          <input
+            type="text"
+            name="userName"
+            [(ngModel)]="studenObj.userName"
+            class="form-control"
+            id="validationDefaultUsername"
+            placeholder="Username"
+            aria-describedby="inputGroupPrepend2"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationDefault03">City</label>
+        <input
+          type="text"
+          name="city"
+          [(ngModel)]="studenObj.city"
+          class="form-control"
+          id="validationDefault03"
+          placeholder="City"
+          required
+        />
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationDefault04">State</label>
+        <select [(ngModel)]="studenObj.state" name="state">
+          <option value="maharashtra">maharashtra</option>
+          <option value="goa">goa</option>
+          <option value="punjab">punjab</option>
+        </select>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationDefault05">Zip</label>
+        <input
+          type="text"
+          name="zip"
+          [(ngModel)]="studenObj.zip"
+          class="form-control"
+          id="validationDefault05"
+          placeholder="Zip"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          name="isActive"
+          [(ngModel)]="studenObj.isActive"
+          type="checkbox"
+          id="invalidCheck2"
+          required
+        />
+        <label class="form-check-label" for="invalidCheck2">
+          Agree to terms and conditions
+        </label>
+      </div>
+    </div>
+
+    <button class="btn btn-primary"  type="submit" (click)="resetForm()">
+      ResetForm
+    </button>
+
+    <button class="btn btn-primary" [disabled]="form.invalid" type="submit" (click)="submitForm()">
+      Submit form
+    </button>
+  </form>
+</div>
+
+<div class="row">
+  {{ dataForm | json }}
+</div>

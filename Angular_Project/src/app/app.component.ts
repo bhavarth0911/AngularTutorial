@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { DataBindingComponent } from './components/data-binding/data-binding.component';
-import { StructuredirectiveComponent } from './components/directive/structuredirective/structuredirective.component';
-// import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 
 
@@ -9,7 +7,7 @@ import { StructuredirectiveComponent } from './components/directive/structuredir
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [StructuredirectiveComponent],
+  imports: [RouterOutlet,RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,61 +1,90 @@
-<p>structuredirective works!</p>
+
 
 <div class="mt-2 p-2 bg-secondary text-white rounded">
-    <h1>structure directive</h1>
-    <p> *ngIf *nfFor</p>
-    <button class="btn btn-primary" (click)="gotoattrbute()">go to attribute directive</button>
+    <h1>if-else</h1>
+    <p>if-else</p>
+    <button class="btn btn-primary" >go to attribute directive</button>
 </div>
 
 <div class="row pt-3">
     <div class="col-3">
-        <div *ngIf="isDiv1Visible" class="bg-danger p-3 text-center">
+        @if(isActive)
+    {
+        <div  class="bg-danger p-3 text-center" >
             <h4>Div-1</h4>
         </div>
+    }
+        
     </div>
 
     <div class="col-3">
-        <div class="bg-danger p-3 text-center" *ngIf="isDiv2visible">
+    @if(isWarnDiv2)
+    {
+        <div class="bg-danger p-3 text-center" >
             <h4>Div-2</h4>
         </div>
+    }@else 
+    {
+         <div class="bg-success p-3 text-center" >
+            <h4>Div-2</h4>
+        </div>
+    }
     </div>
 
     <div class="col-3">
-        <div *ngIf=" num1==num2"class="bg-danger p-3 text-center">
+    @if(num1==num2)
+    {
+        <div class="bg-danger p-3 text-center">
             <h4>Div-3</h4>
         </div>
+    }
     </div>
 
     <div class="col-3">
-        <div *ngIf="selectedState=='maharashtra'" class="bg-danger p-3 text-center">
-            <h4>Div-4</h4>
+        <div class="bg-success p-3 text-center">
+        @if(selectedStatus=="active")
+        {
+        <p>student active</p>
+        }
+        @else if(selectedStatus=="de-active")
+        {
+        <p>student de-active</p>
+        }
+        @else if(selectedStatus=="pending")
+        {
+        <p>status pending</p>
+        }
+        @else{
+            <p>please select status</p>
+        }
         </div>
     </div>
+    
 </div>
 
 <div class="row pt-3">
     <div class="col-3 text-center">
-        <button class="btn btn-danger" (click)="hideDiv1()">Hide</button>
-        <button class="btn btn-primary mx-2" (click)="showDiv1()">show</button>
+        <button class="btn btn-danger" (click)="hide()">Hide</button>
+        <button class="btn btn-primary mx-2" (click)="show()">show</button>
     </div>
     <div class="col-3 text-center">
-        <button class="btn btn-success" (click)="togglediv2()">toggle</button>
+        <button class="btn btn-success" (click)="toggleDiv2()">toggle</button>
     </div>
 
     <div class="col-3">
         <div style="display:flex; align-items:center">
-            <input type="text" [(ngModel)]="num1" placeholder="NUM-1" class="width-50">
-            <input type="text" [(ngModel)]="num2" placeholder="NUM-2" class="width-50">
+            <input type="text"  placeholder="NUM-1" [(ngModel)]="num1" class="width-50">
+            <input type="text"  placeholder="NUM-2" [(ngModel)]="num2" class="width-50">
         </div>
     </div>
 
     <div class="col-3">
         <div style="display:flex; align-items:center">
-            <input [(ngModel)]="isActive"  type="checkbox" class="width-50"> 
-            <select [(ngModel)]="selectedState">
-            <option value="">select</option>
-            <option value="maharashtra">maharashtra</option>
-            <option value="goa">goa</option>
-            <option value="punjab">punjab</option>
+            <select [(ngModel)]="selectedStatus">
+            <option value="">pending</option>
+            <option value="active">student active</option>
+            <option value="de-active">student de-active</option>
+            <option value="pending">status pending</option>
             </select>
         </div>
     </div>
@@ -64,10 +93,10 @@
 </div>
 
 
-<div class="row">
+<!-- <div class="row">
     <div class="col-3">
         <ul>
-            <li *ngFor="let city of cityArray">{{city}}</li>
+            <li </li>
         </ul>
     </div>
 
@@ -120,4 +149,4 @@
 </div>
 
 
-</div>
+</div> -->

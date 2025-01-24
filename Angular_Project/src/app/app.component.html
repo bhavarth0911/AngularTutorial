@@ -1,3 +1,44 @@
-<h1>hello</h1>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="add-employee">add-employee</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="data-bind">data-binding</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="structure-dir">sturcture-directive</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" routerLink="attribute-dir">attribute-directive</a>
+      </li>
 
-<app-structuredirective></app-structuredirective>
+       <li class="nav-item">
+       
+        <a class="nav-link" routerLink="if-else">if-else</a>
+      </li>
+
+     <li class="nav-item">
+        <a class="nav-link" routerLink="for">for-switch</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="pipe">pipe</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="template-form">template-form</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+<router-outlet></router-outlet>
+</div>

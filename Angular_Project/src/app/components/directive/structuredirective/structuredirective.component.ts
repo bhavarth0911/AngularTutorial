@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-structuredirective',
@@ -27,7 +28,6 @@ export class StructuredirectiveComponent {
     {id:2,name:'bhavarth',city:'mumbai',isActive:true},
     {id:3,name:'ram',city:'nashik',isActive:false},
     {id:4,name:'rushi',city:'nagput',isActive:true},
-    
 
   ]
 
@@ -43,5 +43,15 @@ export class StructuredirectiveComponent {
   togglediv2()
   {
     this.isDiv2visible=!this.isDiv2visible;
+  }
+
+  constructor(private router:Router)
+  {
+    
+  }
+
+  gotoattrbute()
+  {
+    this.router.navigateByUrl("attribute-dir")
   }
 }
