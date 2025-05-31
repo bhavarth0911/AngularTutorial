@@ -1,0 +1,75 @@
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  background-color: #207c5a;
+  color: white;
+  padding: 10px;
+}
+
+h3 {
+  margin: 10px 0;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.department-list, .new-department {
+  width: 48%;
+  border: 1px solid #ccc;
+  padding: 15px;
+  background: #f9f9f9;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+button {
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: #2a8850;
+  color: white;
+}
+
+button[type="button"] {
+  background-color: #888;
+  color: white;
+}

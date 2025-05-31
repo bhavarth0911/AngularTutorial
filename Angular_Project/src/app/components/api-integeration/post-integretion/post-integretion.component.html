@@ -1,0 +1,54 @@
+<div class="container">
+  <h2>Post API</h2>
+  <h3>Create Department, Department List</h3>
+
+  <div class="content">
+    <!-- Department List Table -->
+    <div class="department-list">
+      <h4>Department List</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Sr No</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+        @for(item of depatList; track $index)
+        {
+            <tr>
+            <td>{{$index+1}}</td>
+          <td>{{item.departmentName}}</td>
+          <td>{{item.departmentLogo}}</td>
+          <td></td>
+          </tr>
+        }
+          
+        </tbody>
+      </table>
+    </div>
+
+    <!-- New Department Form -->
+    <div class="new-department">
+      <h4>New Department</h4>
+      <form >
+        <label>
+          Department Name
+          <input type="text" name="name" [(ngModel)]="deptObj.departmentName" class="form-control" />
+        </label>
+
+        <label>
+          Department Logo
+          <input type="text"  name="logoUrl" [(ngModel)]="deptObj.departmentLogo" class="form-control"  />
+        </label>
+
+        <div class="buttons">
+          <button type="button">Reset</button>
+          <button type="submit" (click)="onsave()">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

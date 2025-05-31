@@ -1,0 +1,80 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+  <h1>reactive form</h1>
+  <p>create form & validation</p>
+</div>
+
+<div class="row">
+    <div class="col-8">
+        <form class="row g-3" [formGroup]="studentForm">    <!--from wich object form it is-->
+             <div class="col-md-4">
+                 <label class="form-label">First name</label>
+                 <input type="text" formControlName="firstname" class="form-control"/> <!--as i declared the object name already above now in formcontrol name only add field name-->
+
+                 <div class="text-danger">
+                 @if(studentForm.controls['firstname'].touched&&studentForm.controls['firstname'].errors?.['required']){
+                    <span>this is required</span>
+                 }@else if(studentForm.controls['firstname'].touched&&studentForm.controls['firstname'].errors?.['minlength']){
+                    <span>min char 5 required</span>
+                 }
+                 </div>
+             </div>
+
+            <div class="col-md-4">
+                 <label class="form-label">Last name</label>
+                 <input type="text" formControlName="lastname" class="form-control"/>
+            </div>
+
+           <div class="col-md-4">
+            <label class="form-label">User name</label>
+            <div class="input-group">
+             <span class="input-group-text">&#64;</span>
+             <input type="text" formControlName="username" class="form-control"/>  
+          </div>
+            @if(studentForm.controls['username'].touched&&studentForm.controls['username'].errors?.['email']){
+                    <span class="text-danger">email not valid</span>
+                 }
+            </div>
+
+
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label class="form-label">City</label>
+        <input type="text" formControlName="city" class="form-control" /> 
+      </div>
+      
+      <div class="col-md-3 mb-3">
+        <label class="form-label">State</label>
+        <select class="form-select" formControlName="state">
+          <option value="maharashtra">maharashtra</option>
+          <option value="goa">goa</option>
+          <option value="punjab">punjab</option>
+        </select>
+      </div>
+      <div class="col-md-3 ">
+        <label class="form-label">Zip</label>
+        <input type="text" formControlName="zipCode" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" formControlName="isAcceptTerms"/>
+        <label class="form-check-label" for="invalidCheck2">
+          Agree to terms and conditions
+        </label>
+      </div>
+    </div>
+    <div class="col-12">
+    <button class="btn btn-secondary"  type="submit" >
+      ResetForm
+    </button>
+    <button class="btn btn-primary mx-2" (click)="onSave()" [disabled]="studentForm.invalid"  type="submit">
+      Submit form
+    </button>
+    </div>
+
+  </form>
+</div>
+
+<div class="row">
+    {{formValue | json}}
+</div>

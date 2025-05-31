@@ -8,6 +8,9 @@ import { ForComponent } from './components/controlFlow/for/for.component';
 import { SwitchComponent } from './components/controlFlow/switch/switch.component';
 import { PipeComponent } from './components/pipe/pipe.component';
 import { TemplateFormComponent } from './components/template-form/template-form.component';
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { GetApiComponent } from './components/api-integeration/get-api/get-api.component';
+import { PostIntegretionComponent } from './components/api-integeration/post-integretion/post-integretion.component';
 
 export const routes: Routes = [
     {
@@ -45,6 +48,19 @@ export const routes: Routes = [
     {
         path:'template-form',
         component:TemplateFormComponent
+    },
+    {
+        path:'reactive-form',
+        component:ReactiveFormComponent
+    },
+    {
+        path:'get-api',
+        component:GetApiComponent
+    },
+    {
+        path:'post-api',
+        component:PostIntegretionComponent
     }
+
 
 ];
